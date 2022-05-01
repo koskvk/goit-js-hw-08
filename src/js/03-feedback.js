@@ -22,8 +22,8 @@ function formAutofill() {
 };
 
 function onFormInput(event) {
-    formData.email = event.currentTarget.email.value;
-    formData.message = event.currentTarget.message.value;
+    formData.email = event.target.email.value;
+    formData.message = event.target.message.value;
 
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(formData));
 
