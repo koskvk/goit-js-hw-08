@@ -5,7 +5,7 @@ const player = new Player('vimeo-player');
 const playbackTimeKey = 'videoplayer-current-time';
 const valuePlaybackTime = localStorage.getItem(playbackTimeKey);
 
-if (playbackTimeKey) {
+if (valuePlaybackTime) {
     player.setCurrentTime(valuePlaybackTime);
 };
 
