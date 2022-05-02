@@ -1,7 +1,10 @@
 import throttle from 'lodash.throttle';
 
 const LOCALSTORAGE_KEY = "feedback-form-state";
-const formData = {};
+const formData = {
+    email: '',
+    message: ''
+};
 
 const form = document.querySelector('.feedback-form');
 
@@ -18,6 +21,8 @@ function formAutofill() {
 
         form.email.value = email;
         form.message.value = message;
+        formData.email = email;
+        formData.message = message;
     }
 };
 
@@ -31,6 +36,12 @@ function onFormInput(event) {
 function onFormSubmit(event) {
     event.preventDefault();
 
+    const dataToConsole = new FormData(event.currentTarget);
+
+    dataToConsole.forEach((value, name) => {
+        formData[name] = value;
+    });
+    
     console.log('formData', formData);
 
     event.currentTarget.reset();
