@@ -7,7 +7,7 @@ const formData = {
     clear() {
         this.email = '';
         this.message = '';
-    }
+    },
 };
 
 const form = document.querySelector('.feedback-form');
